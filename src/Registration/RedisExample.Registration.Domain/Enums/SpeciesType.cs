@@ -1,4 +1,4 @@
-﻿namespace RedisExample.Registration.Domain.Pets.Enums
+﻿namespace RedisExample.Registration.Domain.Enums
 {
     public enum SpeciesType
     {

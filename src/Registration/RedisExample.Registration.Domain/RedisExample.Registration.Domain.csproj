@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Vaccines\" />
-    <Folder Include="Pets\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BaseEntity.Domain" Version="1.0.0-pre-7" />
     <PackageReference Include="Message.Response.Maybe" Version="1.0.0" />
     <PackageReference Include="Valuables.Utils" Version="1.0.0-pre-2" />

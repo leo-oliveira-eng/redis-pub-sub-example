@@ -1,9 +1,9 @@
 ﻿using BaseEntity.Domain.Entities;
 using Messages.Core;
-using RedisExample.Registration.Domain.Humans.Enums;
+using RedisExample.Registration.Domain.Enums;
 using Valuables.Utils;
 
-namespace RedisExample.Registration.Domain.Humans.Models
+namespace RedisExample.Registration.Domain.Models
 {
     public class Human : Entity
     {
@@ -21,6 +21,8 @@ namespace RedisExample.Registration.Domain.Humans.Models
 
         public Address Address { get; private set; } = null!;
 
+        public List<Pet> Pets { get; set; } = new List<Pet>();
+
         #endregion
 
         #region Constructors
@@ -28,7 +30,7 @@ namespace RedisExample.Registration.Domain.Humans.Models
         [Obsolete(ConstructorObsoleteMessage, true)]
         private Human() : base(Guid.NewGuid()) { }
 
-        public Human(CPF cPF, string name, Email email, DateTime birthDate, GenderType gender, Address address)
+        public Human(CPF cPF, string name, Email email, DateTime birthDate, GenderType gender, Address address, List<Pet> pets)
             : base(Guid.NewGuid())
         {
             CPF = cPF;
@@ -37,6 +39,7 @@ namespace RedisExample.Registration.Domain.Humans.Models
             BirthDate = birthDate;
             Gender = gender;
             Address = address;
+            Pets = pets;
         }
 
         #endregion

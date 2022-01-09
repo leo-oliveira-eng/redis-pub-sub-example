@@ -1,7 +1,7 @@
 ﻿using BaseEntity.Domain.Entities;
 using Messages.Core;
 
-namespace RedisExample.Registration.Domain.Vaccines.Models
+namespace RedisExample.Registration.Domain.Models
 {
     public class Vaccine : Entity
     {

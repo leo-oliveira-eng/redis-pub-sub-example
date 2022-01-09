@@ -1,4 +1,4 @@
-﻿namespace RedisExample.Registration.Domain.Humans.Enums
+﻿namespace RedisExample.Registration.Domain.Enums
 {
     public enum GenderType
     {

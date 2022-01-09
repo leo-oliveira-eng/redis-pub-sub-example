@@ -1,10 +1,8 @@
 ﻿using BaseEntity.Domain.Entities;
 using Messages.Core;
-using RedisExample.Registration.Domain.Humans.Models;
-using RedisExample.Registration.Domain.Pets.Enums;
-using RedisExample.Registration.Domain.Vaccines.Models;
+using RedisExample.Registration.Domain.Enums;
 
-namespace RedisExample.Registration.Domain.Pets.Models
+namespace RedisExample.Registration.Domain.Models
 {
     public class Pet : Entity
     {
