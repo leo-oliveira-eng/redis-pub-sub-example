@@ -1,9 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Vaccines\" />
+    <Folder Include="Pets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BaseEntity.Domain" Version="1.0.0-pre-7" />
+    <PackageReference Include="Message.Response.Maybe" Version="1.0.0" />
+    <PackageReference Include="Valuables.Utils" Version="1.0.0-pre-2" />
+  </ItemGroup>
 
 </Project>
