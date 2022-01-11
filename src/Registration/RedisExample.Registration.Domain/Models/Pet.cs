@@ -20,7 +20,9 @@ namespace RedisExample.Registration.Domain.Models
 
         public List<Vaccine> Vaccines { get; set; } = new List<Vaccine>();
 
-        public Human Guardian { get; set; } = null!;
+        public long HumanId { get; set; }
+
+        public Human Human { get; set; } = null!;
 
         #endregion
 
@@ -29,7 +31,7 @@ namespace RedisExample.Registration.Domain.Models
         [Obsolete(ConstructorObsoleteMessage, true)]
         private Pet() : base(Guid.NewGuid()) { }
 
-        public Pet(string name, DateTime birthDate, SpeciesType species, string color, string breed, List<Vaccine> vaccines)
+        public Pet(string name, DateTime birthDate, SpeciesType species, string color, string breed, Human human)
             : base(Guid.NewGuid())
         {
             Name = name;
@@ -37,7 +39,8 @@ namespace RedisExample.Registration.Domain.Models
             Species = species;
             Color = color;
             Breed = breed;
-            Vaccines = vaccines;
+            HumanId = human.Id;
+            Human = human;
         }
 
         #endregion

@@ -30,16 +30,15 @@ namespace RedisExample.Registration.Domain.Models
         [Obsolete(ConstructorObsoleteMessage, true)]
         private Human() : base(Guid.NewGuid()) { }
 
-        public Human(CPF cPF, string name, Email email, DateTime birthDate, GenderType gender, Address address, List<Pet> pets)
+        public Human(CPF cpf, string name, Email email, DateTime birthDate, GenderType gender, Address address)
             : base(Guid.NewGuid())
         {
-            CPF = cPF;
+            CPF = cpf;
             Name = name;
             Email = email;
             BirthDate = birthDate;
             Gender = gender;
             Address = address;
-            Pets = pets;
         }
 
         #endregion

@@ -19,6 +19,10 @@ namespace RedisExample.Registration.Domain.Models
 
         public string Batch { get; set; } = null!;
 
+        public long PetId { get; set; }
+
+        public Pet Pet { get; set; } = null!;
+
         #endregion
 
         #region Constructors
@@ -26,7 +30,7 @@ namespace RedisExample.Registration.Domain.Models
         [Obsolete(ConstructorObsoleteMessage, true)]
         private Vaccine() : base(Guid.NewGuid()) { }
 
-        public Vaccine(string name, string producer, DateTime date, string registration, string? activeIngredient, string batch)
+        public Vaccine(string name, string producer, DateTime date, string registration, string? activeIngredient, string batch, Pet pet)
             : base(Guid.NewGuid())
         {
             Name = name;
@@ -35,6 +39,8 @@ namespace RedisExample.Registration.Domain.Models
             Registration = registration;
             ActiveIngredient = activeIngredient;
             Batch = batch;
+            PetId = pet.Id;
+            Pet = pet;
         }
 
         #endregion
