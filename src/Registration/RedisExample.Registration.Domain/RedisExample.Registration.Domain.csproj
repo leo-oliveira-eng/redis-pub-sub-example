@@ -12,4 +12,9 @@
     <PackageReference Include="Valuables.Utils" Version="1.0.0-pre-2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Events\" />
+    <Folder Include="Handlers\" />
+  </ItemGroup>
+
 </Project>
