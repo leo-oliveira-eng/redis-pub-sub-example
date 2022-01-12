@@ -19,19 +19,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Infrastructure", "04-Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Common", "05-Common", "{B04651AF-E762-4DD0-BE27-54CFD849CB59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Messaging", "src\Registration\RedisExample.Registration.Messaging\RedisExample.Registration.Messaging.csproj", "{E66CC3B9-1F5C-4239-9979-5FC1C15929FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Messaging", "src\Registration\RedisExample.Registration.Messaging\RedisExample.Registration.Messaging.csproj", "{E66CC3B9-1F5C-4239-9979-5FC1C15929FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.WebApi", "src\Registration\RedisExample.Registration.WebApi\RedisExample.Registration.WebApi.csproj", "{0AF98BC4-DC48-4838-A464-5F200BAAA546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.WebApi", "src\Registration\RedisExample.Registration.WebApi\RedisExample.Registration.WebApi.csproj", "{0AF98BC4-DC48-4838-A464-5F200BAAA546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Application", "src\Registration\RedisExample.Registration.Application\RedisExample.Registration.Application.csproj", "{7DB90E46-6593-4EA2-8418-5D09DE58F39C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Application", "src\Registration\RedisExample.Registration.Application\RedisExample.Registration.Application.csproj", "{7DB90E46-6593-4EA2-8418-5D09DE58F39C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Domain", "src\Registration\RedisExample.Registration.Domain\RedisExample.Registration.Domain.csproj", "{7BE55B4F-D00C-4F0C-A10E-0751C543D7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Domain", "src\Registration\RedisExample.Registration.Domain\RedisExample.Registration.Domain.csproj", "{7BE55B4F-D00C-4F0C-A10E-0751C543D7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.CrossCutting", "src\Registration\RedisExample.Registration.CrossCutting\RedisExample.Registration.CrossCutting.csproj", "{CBD85793-15EC-421D-8704-62446C9E9E7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.CrossCutting", "src\Registration\RedisExample.Registration.CrossCutting\RedisExample.Registration.CrossCutting.csproj", "{CBD85793-15EC-421D-8704-62446C9E9E7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Persistence", "src\Registration\RedisExample.Registration.Persistence\RedisExample.Registration.Persistence.csproj", "{695DD794-8900-4AC5-A0DD-135E7FEF55A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Persistence", "src\Registration\RedisExample.Registration.Persistence\RedisExample.Registration.Persistence.csproj", "{695DD794-8900-4AC5-A0DD-135E7FEF55A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Common", "src\Registration\RedisExample.Registration.Common\RedisExample.Registration.Common.csproj", "{DE563E1D-2F39-48AD-98CA-464698085FE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Common", "src\Registration\RedisExample.Registration.Common\RedisExample.Registration.Common.csproj", "{DE563E1D-2F39-48AD-98CA-464698085FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3D4D1300-8F92-4E7F-957E-DD4EB622C448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Domain.Tests", "src\Registration\RedisExample.Registration.Domain.Tests\RedisExample.Registration.Domain.Tests.csproj", "{386AF3F0-9BD3-410A-A7E7-A72169E778AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,10 @@ Global
 		{DE563E1D-2F39-48AD-98CA-464698085FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE563E1D-2F39-48AD-98CA-464698085FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE563E1D-2F39-48AD-98CA-464698085FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386AF3F0-9BD3-410A-A7E7-A72169E778AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386AF3F0-9BD3-410A-A7E7-A72169E778AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386AF3F0-9BD3-410A-A7E7-A72169E778AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386AF3F0-9BD3-410A-A7E7-A72169E778AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,8 @@ Global
 		{CBD85793-15EC-421D-8704-62446C9E9E7F} = {2A7EE37D-26D0-4E8F-B90A-D10C8FB87252}
 		{695DD794-8900-4AC5-A0DD-135E7FEF55A1} = {2A7EE37D-26D0-4E8F-B90A-D10C8FB87252}
 		{DE563E1D-2F39-48AD-98CA-464698085FE2} = {B04651AF-E762-4DD0-BE27-54CFD849CB59}
+		{3D4D1300-8F92-4E7F-957E-DD4EB622C448} = {F5543910-7CDF-4A50-93AD-B6952CAF0AAF}
+		{386AF3F0-9BD3-410A-A7E7-A72169E778AB} = {3D4D1300-8F92-4E7F-957E-DD4EB622C448}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAAAA92A-2DE5-4F80-AD2D-AD50D6E1994E}

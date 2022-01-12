@@ -21,6 +21,8 @@ namespace RedisExample.Registration.Domain.Models
 
         public Address Address { get; private set; } = null!;
 
+        public string PhoneNumber { get; set; } = null!;
+
         public List<Pet> Pets { get; set; } = new List<Pet>();
 
         #endregion
@@ -30,7 +32,7 @@ namespace RedisExample.Registration.Domain.Models
         [Obsolete(ConstructorObsoleteMessage, true)]
         private Human() : base(Guid.NewGuid()) { }
 
-        public Human(CPF cpf, string name, Email email, DateTime birthDate, GenderType gender, Address address)
+        public Human(CPF cpf, string name, Email email, DateTime birthDate, GenderType gender, Address address, string phoneNumber)
             : base(Guid.NewGuid())
         {
             CPF = cpf;
@@ -39,6 +41,7 @@ namespace RedisExample.Registration.Domain.Models
             BirthDate = birthDate;
             Gender = gender;
             Address = address;
+            PhoneNumber = phoneNumber;
         }
 
         #endregion

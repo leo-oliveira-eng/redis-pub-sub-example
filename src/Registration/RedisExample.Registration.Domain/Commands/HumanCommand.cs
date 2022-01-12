@@ -2,33 +2,31 @@
 using MediatR;
 using Messages.Core;
 using Messages.Core.Extensions;
-using RedisExample.Registration.Domain.Commands.Dtos;
 using RedisExample.Registration.Domain.Models;
+using Valuables.Utils;
 
 namespace RedisExample.Registration.Domain.Commands
 {
     public class HumanCommand : Command, IRequest<Response<Human>>
     {
-        public string? Email { get; set; }
+        public Response<Email> Email { get; set; } = null!;
 
         public string? PhoneNumber { get; set; }
 
-        public AddressDto? Address { get; set; }
+        public Response<Address> Address { get; set; } = null!;
 
         public override Response Validate()
         {
             var response = Response.Create();
 
-            if (!Valuables.Utils.Email.IsValid(Email))
+            if (Email.HasError)
                 response.WithBusinessError(nameof(Email), $"{nameof(Email)} is invalid");
 
             if (string.IsNullOrWhiteSpace(PhoneNumber))
-                response.WithBusinessError(nameof(PhoneNumber),$"{nameof(PhoneNumber)} is invalid");
+                response.WithBusinessError(nameof(PhoneNumber), $"{nameof(PhoneNumber)} is invalid");
 
-            var addressIsValidResponse = Valuables.Utils.Address.IsValid(Address?.Cep, Address?.Street, Address?.Neighborhood, Address?.Number, Address?.City, Address?.UF);
-
-            if (addressIsValidResponse.HasError)
-                response.WithMessages(addressIsValidResponse.Messages);
+            if (Address.HasError)
+                response.WithMessages(Address.Messages);
 
             return response;
         }

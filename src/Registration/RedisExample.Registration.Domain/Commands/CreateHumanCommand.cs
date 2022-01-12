@@ -7,22 +7,22 @@ namespace RedisExample.Registration.Domain.Commands
 {
     public class CreateHumanCommand : HumanCommand
     {
-        public string? Cpf { get; set; }
+        public Response<CPF> Cpf { get; set; } = null!;
 
         public string? Name { get; set; }
 
-        public DateTime BirthDate { get; private set; }
+        public DateTime BirthDate { get; set; }
 
-        public GenderType Gender { get; private set; }
+        public GenderType Gender { get; set; }
 
         public override Response Validate()
         {
             var response = base.Validate();
 
-            if (!CPF.IsValid(Cpf))
+            if (Cpf.HasError)
                 response.WithBusinessError(nameof(Cpf), $"{nameof(Cpf)} is invalid");
 
-            if (BirthDateIsValid(BirthDate))
+            if (!BirthDateIsValid(BirthDate))
                 response.WithBusinessError(nameof(BirthDate), $"{nameof(BirthDate)} is invalid");
 
             if (string.IsNullOrEmpty(Name))
