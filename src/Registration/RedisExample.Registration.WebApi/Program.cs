@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using RedisExample.Registration.Persistence.Context;
+using RedisExample.Registration.WebApi.Middlewares;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 var registrationConnectionString = builder.Configuration.GetConnectionString("Registration");
 var serverVersion = ServerVersion.AutoDetect(registrationConnectionString);
@@ -30,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
