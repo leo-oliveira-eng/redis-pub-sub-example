@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -31,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RedisExample.Registration.CrossCutting\RedisExample.Registration.CrossCutting.csproj" />
+    <ProjectReference Include="..\RedisExample.Registration.Messaging\RedisExample.Registration.Messaging.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.Persistence\RedisExample.Registration.Persistence.csproj" />
   </ItemGroup>
 

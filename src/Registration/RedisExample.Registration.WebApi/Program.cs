@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using RedisExample.Registration.CrossCutting.DI.Extensions;
 using RedisExample.Registration.Persistence.Context;
 using RedisExample.Registration.WebApi.Middlewares;
 using System.Reflection;
@@ -15,6 +16,8 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+builder.Services.ConfigureDependencyInjector();
 
 var registrationConnectionString = builder.Configuration.GetConnectionString("Registration");
 var serverVersion = ServerVersion.AutoDetect(registrationConnectionString);
