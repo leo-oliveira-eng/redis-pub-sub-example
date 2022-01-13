@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ResponseMessages\" />
-    <Folder Include="RequestMessages\" />
+    <PackageReference Include="Http.Request.Service" Version="1.0.0-preview-1" />
   </ItemGroup>
 
 </Project>

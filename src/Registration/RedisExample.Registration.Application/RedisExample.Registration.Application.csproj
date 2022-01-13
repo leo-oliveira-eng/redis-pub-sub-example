@@ -6,4 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="EventHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BaseEntity.Domain" Version="1.0.0-pre-7" />
+    <PackageReference Include="Message.Response.Maybe" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedisExample.Registration.Domain\RedisExample.Registration.Domain.csproj" />
+    <ProjectReference Include="..\RedisExample.Registration.Messaging\RedisExample.Registration.Messaging.csproj" />
+  </ItemGroup>
+
 </Project>
