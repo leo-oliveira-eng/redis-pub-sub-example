@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Valuables.Utils" Version="1.0.0-pre-2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedisExample.VaccinationCard.Domain.Core\RedisExample.VaccinationCard.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

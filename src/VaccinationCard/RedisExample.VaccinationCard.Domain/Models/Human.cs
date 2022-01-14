@@ -3,10 +3,8 @@ using Valuables.Utils;
 
 namespace RedisExample.VaccinationCard.Domain.Models
 {
-    public class Human
+    public class Human : Entity
     {
-        public Guid Id { get; set; }
-
         public string CPF { get; set; } = null!;
 
         public string Name { get; set; } = null!;

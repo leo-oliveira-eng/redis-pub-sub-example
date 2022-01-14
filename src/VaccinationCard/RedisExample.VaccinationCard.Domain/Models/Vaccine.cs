@@ -1,9 +1,7 @@
 ﻿namespace RedisExample.VaccinationCard.Domain.Models
 {
-    public class Vaccine
+    public class Vaccine : Entity
     {
-        public Guid Id { get; set; }
-
         public string Name { get; set; } = null!;
 
         public string Producer { get; set; } = null!;
