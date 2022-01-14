@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Registration", "Registration", "{3931C25C-50C0-4B87-A203-09D77126E7B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Store", "Store", "{B2E00393-F450-4D69-BAE5-BEEBF4761F53}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VaccinationCard", "VaccinationCard", "{B2E00393-F450-4D69-BAE5-BEEBF4761F53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Api", "01-Api", "{AFBFA25A-65E7-4864-B8F9-60A61D48662D}"
 EndProject
@@ -35,11 +35,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3D4D1300-8F92-4E7F-957E-DD4EB622C448}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Domain.Tests", "src\Registration\RedisExample.Registration.Domain.Tests\RedisExample.Registration.Domain.Tests.csproj", "{386AF3F0-9BD3-410A-A7E7-A72169E778AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Domain.Tests", "src\Registration\RedisExample.Registration.Domain.Tests\RedisExample.Registration.Domain.Tests.csproj", "{386AF3F0-9BD3-410A-A7E7-A72169E778AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{61EC250E-6322-48F9-A992-ACD6BBC4C2E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.Application.Tests", "src\Registration\RedisExample.Registration.Application.Tests\RedisExample.Registration.Application.Tests.csproj", "{F01782E8-8417-4AA9-8341-12DE5ED4EDBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.Registration.Application.Tests", "src\Registration\RedisExample.Registration.Application.Tests\RedisExample.Registration.Application.Tests.csproj", "{F01782E8-8417-4AA9-8341-12DE5ED4EDBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Messaging", "00-Messaging", "{9B8DAA39-4C96-44FD-8AD4-9BDDDACC5155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Api", "01-Api", "{2EE44B0E-4EA1-4F25-869D-3A4D16B1A2D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Application", "02-Application", "{2433A574-4A0C-4C12-BC65-F2B9021C12B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Domain", "03-Domain", "{C51BA479-282F-4143-B8D0-0DC9705B33D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Infrastructure", "04-Infrastructure", "{235DB4C7-A9CF-4D90-A4EA-C0315E060DBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Common", "05-Common", "{9D95AF4C-3A00-461A-9EDC-246FAD8A1EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.WebApi", "src\VaccinationCard\RedisExample.VaccinationCard.WebApi\RedisExample.VaccinationCard.WebApi.csproj", "{4A1EBDE1-7F88-471A-A789-0076F6BE164E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Messaging", "src\VaccinationCard\RedisExample.VaccinationCard.Messaging\RedisExample.VaccinationCard.Messaging.csproj", "{E77B20FF-578B-4842-9524-D355A4787B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Application", "src\VaccinationCard\RedisExample.VaccinationCard.Application\RedisExample.VaccinationCard.Application.csproj", "{083A13D1-10D0-4AF3-951B-EE22EE8E125D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Domain", "src\VaccinationCard\RedisExample.VaccinationCard.Domain\RedisExample.VaccinationCard.Domain.csproj", "{5670D72C-7258-4517-BA8C-6CB2136B4C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Data", "src\VaccinationCard\RedisExample.VaccinationCard.Data\RedisExample.VaccinationCard.Data.csproj", "{13A79059-0E85-4F3F-BFD0-6F025B8C4418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Common", "src\VaccinationCard\RedisExample.VaccinationCard.Common\RedisExample.VaccinationCard.Common.csproj", "{C548C3C8-5203-441E-8DDB-F57B7FB42C55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +107,30 @@ Global
 		{F01782E8-8417-4AA9-8341-12DE5ED4EDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01782E8-8417-4AA9-8341-12DE5ED4EDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01782E8-8417-4AA9-8341-12DE5ED4EDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1EBDE1-7F88-471A-A789-0076F6BE164E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1EBDE1-7F88-471A-A789-0076F6BE164E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1EBDE1-7F88-471A-A789-0076F6BE164E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1EBDE1-7F88-471A-A789-0076F6BE164E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E77B20FF-578B-4842-9524-D355A4787B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E77B20FF-578B-4842-9524-D355A4787B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E77B20FF-578B-4842-9524-D355A4787B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E77B20FF-578B-4842-9524-D355A4787B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083A13D1-10D0-4AF3-951B-EE22EE8E125D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083A13D1-10D0-4AF3-951B-EE22EE8E125D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083A13D1-10D0-4AF3-951B-EE22EE8E125D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083A13D1-10D0-4AF3-951B-EE22EE8E125D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5670D72C-7258-4517-BA8C-6CB2136B4C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5670D72C-7258-4517-BA8C-6CB2136B4C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5670D72C-7258-4517-BA8C-6CB2136B4C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5670D72C-7258-4517-BA8C-6CB2136B4C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13A79059-0E85-4F3F-BFD0-6F025B8C4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A79059-0E85-4F3F-BFD0-6F025B8C4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A79059-0E85-4F3F-BFD0-6F025B8C4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A79059-0E85-4F3F-BFD0-6F025B8C4418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +153,18 @@ Global
 		{386AF3F0-9BD3-410A-A7E7-A72169E778AB} = {3D4D1300-8F92-4E7F-957E-DD4EB622C448}
 		{61EC250E-6322-48F9-A992-ACD6BBC4C2E1} = {74FACBA9-0FBF-4DB8-9162-84FCD3AD98A1}
 		{F01782E8-8417-4AA9-8341-12DE5ED4EDBD} = {61EC250E-6322-48F9-A992-ACD6BBC4C2E1}
+		{9B8DAA39-4C96-44FD-8AD4-9BDDDACC5155} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{2EE44B0E-4EA1-4F25-869D-3A4D16B1A2D6} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{2433A574-4A0C-4C12-BC65-F2B9021C12B3} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{C51BA479-282F-4143-B8D0-0DC9705B33D3} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{235DB4C7-A9CF-4D90-A4EA-C0315E060DBC} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{9D95AF4C-3A00-461A-9EDC-246FAD8A1EF0} = {B2E00393-F450-4D69-BAE5-BEEBF4761F53}
+		{4A1EBDE1-7F88-471A-A789-0076F6BE164E} = {2EE44B0E-4EA1-4F25-869D-3A4D16B1A2D6}
+		{E77B20FF-578B-4842-9524-D355A4787B74} = {9B8DAA39-4C96-44FD-8AD4-9BDDDACC5155}
+		{083A13D1-10D0-4AF3-951B-EE22EE8E125D} = {2433A574-4A0C-4C12-BC65-F2B9021C12B3}
+		{5670D72C-7258-4517-BA8C-6CB2136B4C57} = {C51BA479-282F-4143-B8D0-0DC9705B33D3}
+		{13A79059-0E85-4F3F-BFD0-6F025B8C4418} = {235DB4C7-A9CF-4D90-A4EA-C0315E060DBC}
+		{C548C3C8-5203-441E-8DDB-F57B7FB42C55} = {9D95AF4C-3A00-461A-9EDC-246FAD8A1EF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAAAA92A-2DE5-4F80-AD2D-AD50D6E1994E}
