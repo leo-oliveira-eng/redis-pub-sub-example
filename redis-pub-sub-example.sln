@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Common", "src\VaccinationCard\RedisExample.VaccinationCard.Common\RedisExample.VaccinationCard.Common.csproj", "{C548C3C8-5203-441E-8DDB-F57B7FB42C55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Domain.Core", "src\VaccinationCard\RedisExample.VaccinationCard.Domain.Core\RedisExample.VaccinationCard.Domain.Core.csproj", "{8AF098F0-6B5B-4279-82B2-B75595C76BE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C548C3C8-5203-441E-8DDB-F57B7FB42C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF098F0-6B5B-4279-82B2-B75595C76BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF098F0-6B5B-4279-82B2-B75595C76BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF098F0-6B5B-4279-82B2-B75595C76BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF098F0-6B5B-4279-82B2-B75595C76BE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{5670D72C-7258-4517-BA8C-6CB2136B4C57} = {C51BA479-282F-4143-B8D0-0DC9705B33D3}
 		{13A79059-0E85-4F3F-BFD0-6F025B8C4418} = {235DB4C7-A9CF-4D90-A4EA-C0315E060DBC}
 		{C548C3C8-5203-441E-8DDB-F57B7FB42C55} = {9D95AF4C-3A00-461A-9EDC-246FAD8A1EF0}
+		{8AF098F0-6B5B-4279-82B2-B75595C76BE0} = {C51BA479-282F-4143-B8D0-0DC9705B33D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAAAA92A-2DE5-4F80-AD2D-AD50D6E1994E}
