@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EventHandlers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BaseEntity.Domain" Version="1.0.0-pre-7" />
     <PackageReference Include="Message.Response.Maybe" Version="1.0.0" />
   </ItemGroup>

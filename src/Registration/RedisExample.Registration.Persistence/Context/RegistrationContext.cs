@@ -1,4 +1,5 @@
 ﻿using BaseEntity.Domain.Entities;
+using BaseEntity.Domain.Mediator.Contracts;
 using Microsoft.EntityFrameworkCore;
 using RedisExample.Registration.Persistence.Context.Extensions;
 using System.Reflection;
@@ -7,7 +8,13 @@ namespace RedisExample.Registration.Persistence.Context
 {
     public class RegistrationContext : DbContext
     {
-        public RegistrationContext(DbContextOptions<RegistrationContext> dbContextOptions) : base(dbContextOptions) { }
+        IMediatorHandler MediatorHandler { get; }
+
+        public RegistrationContext(DbContextOptions<RegistrationContext> dbContextOptions, IMediatorHandler mediatorHandler) : 
+            base(dbContextOptions) 
+        {
+            MediatorHandler = mediatorHandler ?? throw new ArgumentNullException(nameof(mediatorHandler));
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,11 +37,16 @@ namespace RedisExample.Registration.Persistence.Context
             return base.SaveChanges();
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             UpdateSoftDeleteStatuses();
 
-            return base.SaveChangesAsync(cancellationToken);
+            var result = base.SaveChanges();
+
+            await MediatorHandler.PublishDomainEvents(this).ConfigureAwait(false);
+
+            return Task.FromResult(result).Result;
+
         }
 
         private void UpdateSoftDeleteStatuses()

@@ -4,10 +4,12 @@ using Infrastructure.UnitOfWork;
 using MediatR;
 using Messages.Core;
 using Microsoft.Extensions.DependencyInjection;
+using RedisExample.Registration.Application.EventHandlers;
 using RedisExample.Registration.Application.Services;
 using RedisExample.Registration.Application.Services.Contracts;
 using RedisExample.Registration.CrossCutting.Bus;
 using RedisExample.Registration.Domain.Commands;
+using RedisExample.Registration.Domain.Events;
 using RedisExample.Registration.Domain.Handlers;
 using RedisExample.Registration.Domain.Models;
 using RedisExample.Registration.Domain.Repositories;
@@ -31,6 +33,7 @@ namespace RedisExample.Registration.CrossCutting.DI
 
             services.AddScoped<IMediatorHandler, InternalBus>();
             services.AddScoped<IRequestHandler<CreateHumanCommand, Response<Human>>, CreateHumanCommandHandler>();
+            services.AddScoped<INotificationHandler<HumanCreatedEvent>, HumanCreatedEventHandler>();
 
             #endregion
 
