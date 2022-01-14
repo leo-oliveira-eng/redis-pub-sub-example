@@ -11,7 +11,7 @@ using RedisExample.Registration.Persistence.Context;
 namespace RedisExample.Registration.Persistence.Migrations
 {
     [DbContext(typeof(RegistrationContext))]
-    [Migration("20220111162545_Migration01")]
+    [Migration("20220114014049_Migration01")]
     partial class Migration01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,10 @@ namespace RedisExample.Registration.Persistence.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("longtext");
 

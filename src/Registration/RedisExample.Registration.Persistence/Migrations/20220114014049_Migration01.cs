@@ -41,6 +41,8 @@ namespace RedisExample.Registration.Persistence.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UF = table.Column<string>(type: "varchar(2)", maxLength: 2, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    PhoneNumber = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Code = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     LastUpdate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
