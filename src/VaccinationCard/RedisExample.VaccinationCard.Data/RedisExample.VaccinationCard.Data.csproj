@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Human\Documents\" />
     <Folder Include="Human\Repositories\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Shared\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RedisExample.VaccinationCard.Common\RedisExample.VaccinationCard.Common.csproj" />
+    <ProjectReference Include="..\RedisExample.VaccinationCard.Domain\RedisExample.VaccinationCard.Domain.csproj" />
   </ItemGroup>
 
 </Project>
