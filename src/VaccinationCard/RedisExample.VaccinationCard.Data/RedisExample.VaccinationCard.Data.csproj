@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Human\Documents\" />
-    <Folder Include="Human\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
