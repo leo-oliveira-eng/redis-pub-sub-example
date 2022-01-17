@@ -16,3 +16,4 @@ namespace RedisExample.VaccinationCard.Domain.Repositories
 
         Task<ReplaceOneResult> UpdateAsync(TEntity entity);
     }
+}

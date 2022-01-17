@@ -1,5 +1,4 @@
 ﻿using RedisExample.VaccinationCard.Domain.Enums;
-using Valuables.Utils;
 
 namespace RedisExample.VaccinationCard.Domain.Models
 {

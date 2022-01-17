@@ -1,4 +1,4 @@
-﻿namespace RedisExample.Registration.Domain.Models
+﻿namespace RedisExample.VaccinationCard.Domain.Models
 {
     public class Address
     {

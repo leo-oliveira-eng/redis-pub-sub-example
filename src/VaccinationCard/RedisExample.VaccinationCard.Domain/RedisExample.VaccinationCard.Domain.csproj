@@ -7,15 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
     <PackageReference Include="Valuables.Utils" Version="1.0.0-pre-2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Events\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\RedisExample.VaccinationCard.Common\RedisExample.VaccinationCard.Common.csproj" />
     <ProjectReference Include="..\RedisExample.VaccinationCard.Domain.Core\RedisExample.VaccinationCard.Domain.Core.csproj" />
   </ItemGroup>
 
