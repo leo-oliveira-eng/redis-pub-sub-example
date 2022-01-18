@@ -14,7 +14,7 @@ namespace RedisExample.VaccinationCard.WebApi.Controllers.Default
             Mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        protected async Task<IActionResult> SendAsync<T>(IRequest<Response<T>> request)
+        protected async Task<IActionResult> SendQueryAsync<T>(IRequest<Response<T>> request)
         {
             var response = await Mediator.Send(request);
 

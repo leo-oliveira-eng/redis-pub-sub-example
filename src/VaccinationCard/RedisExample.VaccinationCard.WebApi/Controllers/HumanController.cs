@@ -12,7 +12,7 @@ namespace RedisExample.VaccinationCard.WebApi.Controllers
         public HumanController(ISender mediator) : base(mediator) { }
 
         [HttpGet, Route("id")]
-        public async Task<IActionResult> CreateAsync([FromQuery] FindHumanByIdQuery query)
-            => await SendAsync(query);
+        public async Task<IActionResult> FindAsync([FromQuery] FindHumanByIdQuery query)
+            => await SendQueryAsync(query);
     }
 }
