@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RedisExample.VaccinationCard.Application\RedisExample.VaccinationCard.Application.csproj" />
     <ProjectReference Include="..\RedisExample.VaccinationCard.Data\RedisExample.VaccinationCard.Data.csproj" />
   </ItemGroup>
 

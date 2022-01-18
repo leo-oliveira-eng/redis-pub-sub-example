@@ -8,7 +8,7 @@ using RedisExample.VaccinationCard.Messaging.ResponseMessages;
 
 namespace RedisExample.VaccinationCard.Application.Queries
 {
-    public class FindHumanByIdQueryHandler : IRequest<Response<HumanResponseMessage>>
+    public class FindHumanByIdQueryHandler : IRequestHandler<FindHumanByIdQuery, Response<HumanResponseMessage>>
     {
         IHumanRepository HumanRepository { get; }
 
@@ -17,7 +17,7 @@ namespace RedisExample.VaccinationCard.Application.Queries
             HumanRepository = humanRepository ?? throw new ArgumentNullException(nameof(humanRepository));
         }
 
-        public async Task<Response<HumanResponseMessage>> Handle(FindHumanByIdQuery request)
+        public async Task<Response<HumanResponseMessage>> Handle(FindHumanByIdQuery request, CancellationToken cancellationToken = default)
         {
             var response = Response<HumanResponseMessage>.Create();
 

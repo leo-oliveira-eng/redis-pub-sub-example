@@ -10,8 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Http.Request.Service" Version="1.0.0-preview-1" />
+	<PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Message.Response.Maybe" Version="1.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedisExample.VaccinationCard.CrossCutting\RedisExample.VaccinationCard.CrossCutting.csproj" />
+    <ProjectReference Include="..\RedisExample.VaccinationCard.Messaging\RedisExample.VaccinationCard.Messaging.csproj" />
   </ItemGroup>
 
 </Project>
