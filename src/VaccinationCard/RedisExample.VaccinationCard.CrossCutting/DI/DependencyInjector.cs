@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Mapster;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using RedisExample.VaccinationCard.Data.Context;
 using RedisExample.VaccinationCard.Data.Context.Contracts;
@@ -14,6 +15,8 @@ namespace RedisExample.VaccinationCard.CrossCutting.DI
     {
         public static void Configure(IServiceCollection services)
         {
+            TypeAdapterConfig.GlobalSettings.Default.NameMatchingStrategy(NameMatchingStrategy.Flexible);
+
             #region Data
 
             services.AddScoped<IMongoContext, MongoContext>();
