@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using RedisExample.Registration.Common.Settings;
 using RedisExample.Registration.CrossCutting.DI.Extensions;
 using RedisExample.Registration.Persistence.Context;
 using RedisExample.Registration.WebApi.Middlewares;
@@ -8,6 +9,8 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.Configure<RegistrationSettings>(builder.Configuration.GetSection("ApiSettings"));
 
 builder.Services.AddControllers();
 

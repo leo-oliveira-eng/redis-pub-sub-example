@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RedisExample.Registration.Application\RedisExample.Registration.Application.csproj" />
+    <ProjectReference Include="..\RedisExample.Registration.Common\RedisExample.Registration.Common.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.Domain\RedisExample.Registration.Domain.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.Persistence\RedisExample.Registration.Persistence.csproj" />
   </ItemGroup>

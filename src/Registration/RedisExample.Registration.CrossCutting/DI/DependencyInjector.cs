@@ -4,9 +4,12 @@ using Infrastructure.UnitOfWork;
 using MediatR;
 using Messages.Core;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using RedisExample.Registration.Application.EventHandlers;
 using RedisExample.Registration.Application.Services;
 using RedisExample.Registration.Application.Services.Contracts;
+using RedisExample.Registration.Common.Settings;
+using RedisExample.Registration.Common.Settings.Contracts;
 using RedisExample.Registration.CrossCutting.Bus;
 using RedisExample.Registration.Domain.Commands;
 using RedisExample.Registration.Domain.Events;
@@ -22,6 +25,12 @@ namespace RedisExample.Registration.CrossCutting.DI
     {
         public static void Configure(IServiceCollection services)
         {
+            #region Settings
+
+            services.AddSingleton<ISettings>(service => service.GetRequiredService<IOptions<RegistrationSettings>>().Value);
+
+            #endregion
+
             #region Data
 
             services.AddScoped<IHumanRepository, HumanRepository>();

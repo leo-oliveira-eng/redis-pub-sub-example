@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RedisExample.Registration.Common\RedisExample.Registration.Common.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.CrossCutting\RedisExample.Registration.CrossCutting.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.Messaging\RedisExample.Registration.Messaging.csproj" />
     <ProjectReference Include="..\RedisExample.Registration.Persistence\RedisExample.Registration.Persistence.csproj" />
