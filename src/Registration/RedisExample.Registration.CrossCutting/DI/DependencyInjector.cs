@@ -6,11 +6,14 @@ using Messages.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using RedisExample.Registration.Application.EventHandlers;
+using RedisExample.Registration.Application.EventHandlers.Contracts;
 using RedisExample.Registration.Application.Services;
 using RedisExample.Registration.Application.Services.Contracts;
 using RedisExample.Registration.Common.Settings;
 using RedisExample.Registration.Common.Settings.Contracts;
 using RedisExample.Registration.CrossCutting.Bus;
+using RedisExample.Registration.CrossCutting.Redis;
+using RedisExample.Registration.CrossCutting.Redis.Contracts;
 using RedisExample.Registration.Domain.Commands;
 using RedisExample.Registration.Domain.Events;
 using RedisExample.Registration.Domain.Handlers;
@@ -49,6 +52,8 @@ namespace RedisExample.Registration.CrossCutting.DI
             #region Services
 
             services.AddScoped<IHumanApplicationService, HumanApplicationService>();
+            services.AddScoped<IBrokerService, BrokerService>();
+            services.AddScoped<IEventPublisher, EventPublisher>();
 
             #endregion
         }

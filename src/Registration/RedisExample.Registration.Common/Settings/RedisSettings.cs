@@ -7,5 +7,7 @@
         public int Port { get; set; }
 
         public string Password { get; set; } = null!;
+
+        public IDictionary<string, string> Topics { get; set; } = new Dictionary<string, string>();
     }
 }
