@@ -143,7 +143,7 @@ namespace RedisExample.Registration.Domain.Tests.HumanTests
         }        
 
         [Theory]
-        [MemberData(nameof(InvalidBirthDates))]
+        [MemberData(nameof(InvalidHumanBirthDates))]
         public async Task Handle_ShouldReturnResponseWithBusinessError_BirthDateIsInvalid(DateTime birthDate)
         {
             _humanRepository.Setup(x => x.AddAsync(It.IsAny<Human>())).Verifiable();
