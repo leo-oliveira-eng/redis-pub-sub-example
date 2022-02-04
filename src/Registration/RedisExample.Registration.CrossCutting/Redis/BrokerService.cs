@@ -29,7 +29,7 @@ namespace RedisExample.Registration.CrossCutting.Redis
         {
             ConfigurationOptions options = new();
 
-            options.AbortOnConnectFail = false;
+            options.AbortOnConnectFail = true;
             options.EndPoints.Add(Settings.RedisSettings.Endpoint, Settings.RedisSettings.Port);
             options.Password = Settings.RedisSettings.Password;
             options.AllowAdmin = true;

@@ -8,21 +8,21 @@ namespace RedisExample.Registration.Domain.Models
     {
         #region Properties
 
-        public string Name { get; set; } = null!;
+        public string Name { get; private set; } = null!;
 
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate { get; private set; }
 
-        public SpeciesType Species { get; set; }
+        public SpeciesType Species { get; private set; }
 
-        public string Color { get; set; } = null!;
+        public string Color { get; private set; } = null!;
 
-        public string Breed { get; set; } = null!;
+        public string Breed { get; private set; } = null!;
 
-        public List<Vaccine> Vaccines { get; set; } = new List<Vaccine>();
+        public List<Vaccine> Vaccines { get; private set; } = new List<Vaccine>();
 
-        public long HumanId { get; set; }
+        public long HumanId { get; private set; }
 
-        public Human Human { get; set; } = null!;
+        public Human Human { get; private set; } = null!;
 
         #endregion
 

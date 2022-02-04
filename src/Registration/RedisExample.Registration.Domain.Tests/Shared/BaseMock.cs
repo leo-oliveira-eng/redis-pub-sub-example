@@ -32,10 +32,29 @@ namespace RedisExample.Registration.Domain.Tests.Shared
                     uf ?? "RJ",
                     complement);
 
-        public static IEnumerable<object[]> InvalidBirthDates()
+        public CreatePetCommand CreatePetCommandFake(Guid? humanId = null, string? name = null, DateTime? birthDate = null, SpeciesType species = default, 
+            string? color = null, string? breed = null)
+            => Builder<CreatePetCommand>.CreateNew()
+                .With(x => x.HumanId, humanId ?? Guid.NewGuid())
+                .With(x => x.Name, name ?? "Any Name")
+                .With(x => x.BirthDate, birthDate ?? DateTime.Now.AddMonths(-2))
+                .With(x => x.Species, species == default ? SpeciesType.Dog : species)
+                .With(x => x.Color, color ?? "caramel")
+                .With(x => x.Breed, breed ?? "SRD")
+                .Build();
+
+        public static IEnumerable<object[]> InvalidHumanBirthDates()
         {
             yield return new object[] { DateTime.Now };
             yield return new object[] { DateTime.Now.AddYears(-15) };
+            yield return new object[] { DateTime.Now.AddYears(-150) };
+            yield return new object[] { DateTime.Now.AddYears(+18) };
+            yield return new object[] { (DateTime)default };
+        }
+
+        public static IEnumerable<object[]> InvalidPetBirthDates()
+        {
+            yield return new object[] { DateTime.Now };
             yield return new object[] { DateTime.Now.AddYears(-150) };
             yield return new object[] { DateTime.Now.AddYears(+18) };
             yield return new object[] { (DateTime)default };
