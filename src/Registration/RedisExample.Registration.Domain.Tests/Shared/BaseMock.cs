@@ -2,6 +2,7 @@
 using Messages.Core;
 using RedisExample.Registration.Domain.Commands;
 using RedisExample.Registration.Domain.Enums;
+using RedisExample.Registration.Domain.Models;
 using System;
 using System.Collections.Generic;
 using Valuables.Utils;
@@ -59,5 +60,8 @@ namespace RedisExample.Registration.Domain.Tests.Shared
             yield return new object[] { DateTime.Now.AddYears(+18) };
             yield return new object[] { (DateTime)default };
         }
+
+        public Human HumanFake()
+            => Builder<Human>.CreateNew().Build();
     }
 }

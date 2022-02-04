@@ -44,7 +44,7 @@ namespace RedisExample.Registration.Domain.Handlers
             await HumanRepository.UpdateAsync(human);
 
             if (!await UnitOfWork.CommitAsync())
-                return response.WithCriticalError("Failed to save human");
+                return response.WithCriticalError("Failed to add new pet");
 
             return response.SetValue(human);
         }

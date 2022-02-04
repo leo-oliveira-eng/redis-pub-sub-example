@@ -27,6 +27,30 @@ namespace RedisExample.Registration.Domain.Tests.PetTests
         }
 
         [Fact]
+        public async Task Handle_ShouldCreateNewHuman_ValidParameters()
+        {
+            var command = CreatePetCommandFake();
+            var human = HumanFake();
+            _unitOfWork.Setup(x => x.CommitAsync()).ReturnsAsync(true).Verifiable();
+            _humanRepository.Setup(x => x.UpdateAsync(It.IsAny<Human>())).Verifiable();
+            _humanRepository.Setup(x => x.FindAsync(It.IsAny<Guid>())).ReturnsAsync(human).Verifiable();
+
+            
+
+            var response = await Handler.Handle(command);
+
+            response.Should().NotBeNull();
+            response.HasError.Should().BeFalse();
+            response.Messages.Should().BeEmpty();
+            response.Data.HasValue.Should().BeTrue();
+            response.Data.Value.Should().BeOfType(typeof(Human));
+            response.Data.Value.DomainEvents.Should().NotBeEmpty();
+            response.Data.Value.Id.Should().Be(human.Id);
+            _humanRepository.VerifyAll();
+            _unitOfWork.Verify();
+        }
+
+        [Fact]
         public async Task Handle_ShouldReturnBusinessError_NameIsEmpty()
         {
             _unitOfWork.Setup(x => x.CommitAsync());
@@ -124,6 +148,28 @@ namespace RedisExample.Registration.Domain.Tests.PetTests
             _humanRepository.Verify(x => x.AddAsync(It.IsAny<Human>()), Times.Never);
             _humanRepository.Verify(x => x.FindAsync(It.IsAny<Guid>()), Times.Once);
             _unitOfWork.Verify(x => x.CommitAsync(), Times.Never);
+        }
+
+        [Fact]
+        public async Task Handle_ShouldReturnCriticalError_CommitAsyncFailed()
+        {
+            _unitOfWork.Setup(x => x.CommitAsync()).ReturnsAsync(false).Verifiable();
+            _humanRepository.Setup(x => x.UpdateAsync(It.IsAny<Human>())).Verifiable();
+            _humanRepository.Setup(x => x.FindAsync(It.IsAny<Guid>())).ReturnsAsync(HumanFake()).Verifiable();
+
+            var command = CreatePetCommandFake();
+
+            var response = await Handler.Handle(command);
+
+            response.Should().NotBeNull();
+            response.HasError.Should().BeTrue();
+            response.Messages.Should().HaveCount(1);
+            response.Messages.Should().Contain(message => message.Type.Equals(MessageType.CriticalError));
+            response.Messages.Should().Contain(message => message.Text.Equals("Failed to add new pet"));
+            response.Data.HasValue.Should().BeFalse();
+            response.Data.Value.Should().BeNull();
+            _humanRepository.VerifyAll();
+            _unitOfWork.Verify();
         }
     }
 }
