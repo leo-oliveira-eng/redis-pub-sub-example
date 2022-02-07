@@ -2,13 +2,13 @@
 using RedisExample.Registration.Messaging.Enums;
 using System.Runtime.Serialization;
 
-namespace RedisExample.Registration.Messaging.ResponseMessages
+namespace RedisExample.Registration.Messaging.RequestMessages
 {
     [DataContract]
-    public class PetResponseMessage : ResponseMessage
+    public class CreatePetRequestMessage : RequestMessage
     {
         [DataMember]
-        public Guid Code { get; set; }
+        public Guid HumanId { get; set; }
 
         [DataMember]
         public string Name { get; set; } = null!;
