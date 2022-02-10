@@ -7,5 +7,7 @@ namespace RedisExample.Registration.Application.Services.Contracts
     public interface IHumanApplicationService
     {
         Task<Response<HumanResponseMessage>> CreateAsync(CreateHumanRequestMesssage requestMessage);
+
+        Task<Response<HumanResponseMessage>> CreatePetAsync(CreatePetRequestMessage? requestMessage);
     }
 }

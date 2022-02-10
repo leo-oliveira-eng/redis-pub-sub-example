@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RedisExample.Registration.Application\RedisExample.Registration.Application.csproj" />
+    <ProjectReference Include="..\RedisExample.Registration.CrossCutting\RedisExample.Registration.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

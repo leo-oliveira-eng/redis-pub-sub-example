@@ -1,6 +1,7 @@
 ﻿using BaseEntity.Domain.Mediator.Contracts;
 using BaseEntity.Domain.UnitOfWork;
 using Infrastructure.UnitOfWork;
+using MapsterMapper;
 using MediatR;
 using Messages.Core;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ using RedisExample.Registration.Application.Services.Contracts;
 using RedisExample.Registration.Common.Settings;
 using RedisExample.Registration.Common.Settings.Contracts;
 using RedisExample.Registration.CrossCutting.Bus;
+using RedisExample.Registration.CrossCutting.DI.Mappings;
 using RedisExample.Registration.CrossCutting.Redis;
 using RedisExample.Registration.CrossCutting.Redis.Contracts;
 using RedisExample.Registration.Domain.Commands;
@@ -55,6 +57,14 @@ namespace RedisExample.Registration.CrossCutting.DI
             services.AddScoped<IHumanApplicationService, HumanApplicationService>();
             services.AddScoped<IBrokerService, BrokerService>();
             services.AddScoped<IEventPublisher, EventPublisher>();
+
+            #endregion
+
+            #region Mapper
+
+            services.AddSingleton(MappingConfiguration.GetConfiguredMappingConfig());
+
+            services.AddScoped<IMapper, ServiceMapper>();
 
             #endregion
         }

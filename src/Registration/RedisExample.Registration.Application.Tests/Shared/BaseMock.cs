@@ -19,5 +19,8 @@ namespace RedisExample.Registration.Application.Tests.Shared
 
         public Address AddressFake()
             => Builder<Address>.CreateNew().Build();
+
+        public CreatePetRequestMessage CreatePetRequestMessageFake()
+            => Builder<CreatePetRequestMessage>.CreateNew().Build();
     }
 }
