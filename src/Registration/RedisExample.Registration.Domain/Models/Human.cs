@@ -44,6 +44,10 @@ namespace RedisExample.Registration.Domain.Models
             PhoneNumber = phoneNumber;
         }
 
+        #endregion
+
+        #region Methods
+
         internal void AddPet(Pet pet)
             => Pets.Add(pet);
 

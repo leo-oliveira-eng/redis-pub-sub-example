@@ -7,21 +7,21 @@ namespace RedisExample.Registration.Domain.Models
     {
         #region Properties
 
-        public string Name { get; set; } = null!;
+        public string Name { get; private set; } = null!;
 
-        public string Producer { get; set; } = null!;
+        public string Producer { get; private set; } = null!;
 
-        public DateTime Date { get; set; }
+        public DateTime Date { get; private set; }
 
-        public string Registration { get; set; } = null!;
+        public string Registration { get; private set; } = null!;
 
-        public string? ActiveIngredient { get; set; }
+        public string? ActiveIngredient { get; private set; }
 
-        public string Batch { get; set; } = null!;
+        public string Batch { get; private set; } = null!;
 
-        public long PetId { get; set; }
+        public long PetId { get; private set; }
 
-        public Pet Pet { get; set; } = null!;
+        public Pet Pet { get; private set; } = null!;
 
         #endregion
 
