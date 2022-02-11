@@ -6,6 +6,7 @@ using Moq;
 using RedisExample.Registration.Domain.Commands;
 using RedisExample.Registration.Domain.Models;
 using RedisExample.Registration.Messaging.ResponseMessages;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -20,7 +21,7 @@ namespace RedisExample.Registration.Application.Tests.ServicesTests.HumanTests
                 .ReturnsAsync(HumanFake())
                 .Verifiable();
 
-            var response = await HumanApplicationService.CreatePetAsync(CreatePetRequestMessageFake());
+            var response = await HumanApplicationService.CreatePetAsync(CreatePetRequestMessageFake(), Guid.NewGuid());
 
             response.Should().NotBeNull();
             response.HasError.Should().BeFalse();
@@ -35,7 +36,7 @@ namespace RedisExample.Registration.Application.Tests.ServicesTests.HumanTests
         {
             _mediatorHandler.Setup(handler => handler.SendCommand<CreatePetCommand, Response<Human>>(It.IsAny<CreatePetCommand>()));
 
-            var response = await HumanApplicationService.CreatePetAsync(null);
+            var response = await HumanApplicationService.CreatePetAsync(null, Guid.Empty);
 
             response.Should().NotBeNull();
             response.HasError.Should().BeTrue();
@@ -54,7 +55,7 @@ namespace RedisExample.Registration.Application.Tests.ServicesTests.HumanTests
                 .ReturnsAsync(Response<Human>.Create().WithBusinessError(errorMessage))
                 .Verifiable();
 
-            var response = await HumanApplicationService.CreatePetAsync(CreatePetRequestMessageFake());
+            var response = await HumanApplicationService.CreatePetAsync(CreatePetRequestMessageFake(), Guid.NewGuid());
 
             response.Should().NotBeNull();
             response.HasError.Should().BeTrue();

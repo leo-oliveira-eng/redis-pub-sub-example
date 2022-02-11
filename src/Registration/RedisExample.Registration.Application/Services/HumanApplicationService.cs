@@ -37,14 +37,14 @@ namespace RedisExample.Registration.Application.Services
             return response.SetValue(Mapper.Map<HumanResponseMessage>(createHumanResponse));
         }
 
-        public async Task<Response<HumanResponseMessage>> CreatePetAsync(CreatePetRequestMessage? requestMessage)
+        public async Task<Response<HumanResponseMessage>> CreatePetAsync(CreatePetRequestMessage? requestMessage, Guid humanId)
         {
             var response = Response<HumanResponseMessage>.Create();
 
             if (requestMessage is null)
                 return response.WithBusinessError("Request data is invalid");
 
-            var createPetResponse = await Mediator.SendCommand<CreatePetCommand, Response<Human>>(Mapper.Map<CreatePetCommand>(requestMessage));
+            var createPetResponse = await Mediator.SendCommand<CreatePetCommand, Response<Human>>(Mapper.Map<CreatePetCommand>((requestMessage, humanId)));
 
             if (createPetResponse.HasError)
                 return response.WithMessages(createPetResponse.Messages);

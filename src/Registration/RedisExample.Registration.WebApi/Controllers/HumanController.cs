@@ -18,5 +18,9 @@ namespace RedisExample.Registration.WebApi.Controllers
         [HttpPost, Route("")]
         public async Task<IActionResult> CreateAsync([FromBody] CreateHumanRequestMesssage requestMessage)
             => await WithResponseAsync(() => HumanApplicationService.CreateAsync(requestMessage));
+
+        [HttpPut, Route("Pet/{humanId}")]
+        public async Task<IActionResult> CreatePetAsync([FromBody] CreatePetRequestMessage requestMessage, Guid humanId)
+            => await WithResponseAsync(() => HumanApplicationService.CreatePetAsync(requestMessage, humanId));
     }
 }

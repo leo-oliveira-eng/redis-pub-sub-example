@@ -8,9 +8,6 @@ namespace RedisExample.Registration.Messaging.RequestMessages
     public class CreatePetRequestMessage : RequestMessage
     {
         [DataMember]
-        public Guid HumanId { get; set; }
-
-        [DataMember]
         public string Name { get; set; } = null!;
 
         [DataMember]

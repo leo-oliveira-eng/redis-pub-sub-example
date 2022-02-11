@@ -56,6 +56,18 @@ namespace RedisExample.Registration.CrossCutting.DI.Mappings
                 .IgnoreNullValues(true)
                 .ConstructUsing(src => Address.Create(src.Cep, src.Street, src.Neighborhood, src.Number, src.City, src.UF, src.Complement));
 
+            config.NewConfig<(CreatePetRequestMessage requestMessage, Guid humanId), CreatePetCommand>()
+                .IgnoreNullValues(true)
+                .MapWith(src => new CreatePetCommand
+                {
+                    BirthDate = src.requestMessage.BirthDate,
+                    Breed = src.requestMessage.Breed,
+                    Color = src.requestMessage.Color,
+                    Name = src.requestMessage.Name,
+                    Species = (SpeciesType)src.requestMessage.Species,
+                    HumanId = src.humanId
+                });
+
             config.Compile();
 
             return config;
