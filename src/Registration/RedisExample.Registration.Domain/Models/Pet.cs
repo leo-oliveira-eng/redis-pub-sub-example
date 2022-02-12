@@ -45,6 +45,13 @@ namespace RedisExample.Registration.Domain.Models
 
         #endregion
 
+        #region Methods
+
+        internal void AddVaccine(Vaccine vaccine)
+            => Vaccines.Add(vaccine);
+
+        #endregion
+
         #region Conversion Operators
 
         public static implicit operator Pet(Maybe<Pet> entity) => entity.Value;

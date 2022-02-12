@@ -44,6 +44,27 @@ namespace RedisExample.Registration.Domain.Tests.Shared
                 .With(x => x.Breed, breed ?? "SRD")
                 .Build();
 
+        public AddVaccineCommand AddVaccineCommandFake(string? name = null, string? producer = null, DateTime? date = null, string? registration = null, string? batch = null,
+            Guid? petId = null)
+            => Builder<AddVaccineCommand>.CreateNew()
+                .With(x => x.Name, name ?? "Any vaccine name")
+                .With(x => x.Producer, producer ?? "Any producer")
+                .With(x => x.Date, date ?? DateTime.Now.AddMonths(-1))
+                .With(x => x.Registration, registration ?? "Any registration number")
+                .With(x => x.Batch, batch ?? "Any batch")
+                .With(x => x.PetId, petId ?? Guid.NewGuid())
+                .Build();
+
+        public Human HumanFake(List<Pet>? pets = null)
+            => Builder<Human>.CreateNew()
+                .With(x => x.Pets, pets ?? new List<Pet>())
+                .Build();
+
+        public Pet PetFake(Guid? id = null)
+            => Builder<Pet>.CreateNew()
+                .With(x => x.Code, id ?? Guid.NewGuid())
+                .Build();
+
         public static IEnumerable<object[]> InvalidHumanBirthDates()
         {
             yield return new object[] { DateTime.Now };
@@ -61,7 +82,12 @@ namespace RedisExample.Registration.Domain.Tests.Shared
             yield return new object[] { (DateTime)default };
         }
 
-        public Human HumanFake()
-            => Builder<Human>.CreateNew().Build();
+        public static IEnumerable<object[]> InvalidVaccineDates()
+        {
+            yield return new object[] { DateTime.Now };
+            yield return new object[] { DateTime.Now.AddYears(-10) };
+            yield return new object[] { DateTime.Now.AddYears(+1) };
+            yield return new object[] { (DateTime)default };
+        }
     }
 }
