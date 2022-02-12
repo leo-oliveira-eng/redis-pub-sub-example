@@ -33,9 +33,7 @@ namespace RedisExample.Registration.Domain.Tests.PetTests
             var human = HumanFake();
             _unitOfWork.Setup(x => x.CommitAsync()).ReturnsAsync(true).Verifiable();
             _humanRepository.Setup(x => x.UpdateAsync(It.IsAny<Human>())).Verifiable();
-            _humanRepository.Setup(x => x.FindAsync(It.IsAny<Guid>())).ReturnsAsync(human).Verifiable();
-
-            
+            _humanRepository.Setup(x => x.FindAsync(It.IsAny<Guid>())).ReturnsAsync(human).Verifiable();            
 
             var response = await Handler.Handle(command);
 
