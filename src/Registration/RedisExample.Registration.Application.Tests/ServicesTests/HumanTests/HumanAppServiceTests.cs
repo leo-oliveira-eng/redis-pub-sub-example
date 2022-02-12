@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using RedisExample.Registration.Application.Services;
 using RedisExample.Registration.Application.Tests.Shared;
-using RedisExample.Registration.CrossCutting.DI.Extensions;
 using RedisExample.Registration.CrossCutting.DI.Mappings;
 
 namespace RedisExample.Registration.Application.Tests.ServicesTests.HumanTests
