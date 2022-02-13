@@ -68,6 +68,20 @@ namespace RedisExample.Registration.CrossCutting.DI.Mappings
                     HumanId = src.humanId
                 });
 
+            config.NewConfig<(VaccineRequestMessage requestMessage, Guid humanId, Guid petId), AddVaccineCommand>()
+                .IgnoreNullValues(true)
+                .MapWith(src => new AddVaccineCommand
+                {
+                    HumanId = src.humanId,
+                    PetId = src.petId,
+                    Name = src.requestMessage.Name,
+                    ActiveIngredient = src.requestMessage.ActiveIngredient,
+                    Batch = src.requestMessage.Batch,
+                    Date = src.requestMessage.Date,
+                    Producer = src.requestMessage.Producer,
+                    Registration = src.requestMessage.Registration
+                });
+
             config.Compile();
 
             return config;

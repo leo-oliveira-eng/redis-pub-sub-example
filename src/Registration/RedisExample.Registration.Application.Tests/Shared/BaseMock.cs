@@ -22,5 +22,8 @@ namespace RedisExample.Registration.Application.Tests.Shared
 
         public CreatePetRequestMessage CreatePetRequestMessageFake()
             => Builder<CreatePetRequestMessage>.CreateNew().Build();
+
+        public VaccineRequestMessage VaccineRequestMessageFake()
+            => Builder<VaccineRequestMessage>.CreateNew().Build();
     }
 }

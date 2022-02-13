@@ -40,7 +40,7 @@ namespace RedisExample.Registration.Domain.Handlers
             if (targetPet is null)
                 return response.WithBusinessError($"Pet ID {command.PetId} not found");
 
-            var vaccine = new Vaccine(command.Name, command.Producer, command.Date, command.Registration, command.ActiveIngredient, command.Batch, targetPet);
+            var vaccine = new Vaccine(command.Name!, command.Producer!, command.Date, command.Registration!, command.ActiveIngredient, command.Batch!, targetPet);
 
             targetPet.AddVaccine(vaccine);
 

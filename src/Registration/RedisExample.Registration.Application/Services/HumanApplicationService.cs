@@ -51,5 +51,20 @@ namespace RedisExample.Registration.Application.Services
 
             return response.SetValue(Mapper.Map<HumanResponseMessage>(createPetResponse));
         }
+
+        public async Task<Response<HumanResponseMessage>> AddVaccineAsync(Guid humanId, Guid petId, VaccineRequestMessage? requestMessage)
+        {
+            var response = Response<HumanResponseMessage>.Create();
+
+            if (requestMessage is null)
+                return response.WithBusinessError("Request data is invalid");
+
+            var addVaccineResponse = await Mediator.SendCommand<AddVaccineCommand, Response<Human>>(Mapper.Map<AddVaccineCommand>((requestMessage, humanId, petId)));
+
+            if (addVaccineResponse.HasError)
+                return response.WithMessages(addVaccineResponse.Messages);
+
+            return response.SetValue(Mapper.Map<HumanResponseMessage>(addVaccineResponse));
+        }
     }
 }

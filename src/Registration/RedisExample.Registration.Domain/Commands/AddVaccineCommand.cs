@@ -8,21 +8,21 @@ namespace RedisExample.Registration.Domain.Commands
 {
     public class AddVaccineCommand : Command, IRequest<Response<Human>>
     {
-        public Guid HumanId { get; private set; }
+        public Guid HumanId { get; set; }
 
-        public Guid PetId { get; private set; }
+        public Guid PetId { get; set; }
 
-        public string Name { get; private set; } = null!;
+        public string? Name { get; set; }
 
-        public string Producer { get; private set; } = null!;
+        public string? Producer { get; set; }
 
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
 
-        public string Registration { get; private set; } = null!;
+        public string? Registration { get; set; }
 
-        public string? ActiveIngredient { get; private set; }
+        public string? ActiveIngredient { get; set; }
 
-        public string Batch { get; private set; } = null!;
+        public string? Batch { get; set; }
 
         public override Response Validate()
         {
