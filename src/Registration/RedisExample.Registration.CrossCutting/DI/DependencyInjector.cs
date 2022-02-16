@@ -49,6 +49,7 @@ namespace RedisExample.Registration.CrossCutting.DI
             services.AddScoped<IRequestHandler<CreateHumanCommand, Response<Human>>, CreateHumanCommandHandler>();
             services.AddScoped<IRequestHandler<CreatePetCommand, Response<Human>>, CreatePetCommandHandler>();
             services.AddScoped<INotificationHandler<HumanCreatedEvent>, HumanCreatedEventHandler>();
+            services.AddScoped<IRequestHandler<AddVaccineCommand, Response<Human>>, AddVaccineCommandHandler>();
 
             #endregion
 
