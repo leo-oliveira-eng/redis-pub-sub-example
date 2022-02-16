@@ -24,5 +24,8 @@ namespace RedisExample.Registration.Messaging.ResponseMessages
 
         [DataMember]
         public string Breed { get; set; } = null!;
+
+        [DataMember]
+        public List<VaccineResponseMessage> Vaccines { get; set; } = new();
     }
 }
