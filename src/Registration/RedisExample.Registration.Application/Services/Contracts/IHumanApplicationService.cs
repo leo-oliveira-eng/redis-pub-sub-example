@@ -9,5 +9,7 @@ namespace RedisExample.Registration.Application.Services.Contracts
         Task<Response<HumanResponseMessage>> CreateAsync(CreateHumanRequestMesssage requestMessage);
 
         Task<Response<HumanResponseMessage>> CreatePetAsync(CreatePetRequestMessage? requestMessage, Guid humanId);
+
+        Task<Response<HumanResponseMessage>> AddVaccineAsync(Guid humanId, Guid petId, VaccineRequestMessage? requestMessage);
     }
 }
