@@ -66,5 +66,12 @@ namespace RedisExample.Registration.Application.Services
 
             return response.SetValue(Mapper.Map<HumanResponseMessage>(addVaccineResponse));
         }
+
+        public async Task<Response<HumanDeletedResponseMessage>> DeleteAsync(Guid humanId)
+        {
+            var deleteHumanResponse = await Mediator.SendCommand<DeleteHumanCommand, Response>(new DeleteHumanCommand(humanId));
+
+            return Response<HumanDeletedResponseMessage>.Create().WithMessages(deleteHumanResponse.Messages);
+        }
     }
 }
