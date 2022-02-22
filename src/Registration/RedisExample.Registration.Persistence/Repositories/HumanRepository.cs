@@ -20,5 +20,20 @@ namespace RedisExample.Registration.Persistence.Repositories
 
             return Maybe<Human>.Create(human!);
         }
+
+        public Task Delete(Human human)
+        {
+            human.Pets.ForEach(pet => DeletePet(pet));
+
+            human.Delete();
+
+            return Task.CompletedTask;
+        }
+
+        private void DeletePet(Pet pet)
+        {
+            Context.RemoveRange(pet.Vaccines);
+            Context.Remove(pet);
+        }
     }
 }

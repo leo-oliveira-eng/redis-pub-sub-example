@@ -3,5 +3,8 @@ using RedisExample.Registration.Domain.Models;
 
 namespace RedisExample.Registration.Domain.Repositories
 {
-    public interface IHumanRepository : IRepository<Human> { }
+    public interface IHumanRepository : IRepository<Human> 
+    {
+        Task Delete(Human human);
+    }
 }

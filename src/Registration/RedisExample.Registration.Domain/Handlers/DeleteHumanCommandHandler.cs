@@ -32,7 +32,7 @@ namespace RedisExample.Registration.Domain.Handlers
 
             human.Value!.AddDomainEvent(new HumanDeletedEvent(human.Value.Code));
 
-            await HumanRepository.RemoveAsync(human!);
+            await HumanRepository.Delete(human!);
 
             if (!await UnitOfWork.CommitAsync())
                 return response.WithCriticalError($"Failed to delete human id {command.HumanId}");
