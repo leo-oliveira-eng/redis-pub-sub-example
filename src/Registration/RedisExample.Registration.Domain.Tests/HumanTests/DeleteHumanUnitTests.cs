@@ -36,7 +36,7 @@ namespace RedisExample.Registration.Domain.Tests.HumanTests
             _humanRepository.Setup(repository => repository.FindAsync(It.IsAny<Guid>()))
                 .ReturnsAsync(human)
                 .Verifiable();
-            _humanRepository.Setup(repository => repository.RemoveAsync(It.IsAny<Human>()));
+            _humanRepository.Setup(repository => repository.Delete(It.IsAny<Human>()));
 
             var command = new DeleteHumanCommand(human.Code);
 
@@ -81,7 +81,7 @@ namespace RedisExample.Registration.Domain.Tests.HumanTests
             _humanRepository.Setup(repository => repository.FindAsync(It.IsAny<Guid>()))
                 .ReturnsAsync(human)
                 .Verifiable();
-            _humanRepository.Setup(repository => repository.RemoveAsync(It.IsAny<Human>()));
+            _humanRepository.Setup(repository => repository.Delete(It.IsAny<Human>()));
 
             var command = new DeleteHumanCommand(human.Code);
 
