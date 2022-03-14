@@ -69,13 +69,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.VaccinationCar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3EF9A1CC-5225-41EA-B56C-979A6AB34B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Domain.Tests", "src\VaccinationCard\RedisExample.VaccinationCard.Domain.Tests\RedisExample.VaccinationCard.Domain.Tests.csproj", "{4C35A457-5241-4FA9-89DD-AE3F207E8B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.VaccinationCard.Domain.Tests", "src\VaccinationCard\RedisExample.VaccinationCard.Domain.Tests\RedisExample.VaccinationCard.Domain.Tests.csproj", "{4C35A457-5241-4FA9-89DD-AE3F207E8B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.CrossCutting", "src\VaccinationCard\RedisExample.VaccinationCard.CrossCutting\RedisExample.VaccinationCard.CrossCutting.csproj", "{EC74B9B8-021B-48A9-A02F-2473CD1C6015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.VaccinationCard.CrossCutting", "src\VaccinationCard\RedisExample.VaccinationCard.CrossCutting\RedisExample.VaccinationCard.CrossCutting.csproj", "{EC74B9B8-021B-48A9-A02F-2473CD1C6015}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FE36B304-4207-4EA8-AB13-B14B46ED13E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.VaccinationCard.Application.Tests", "src\VaccinationCard\RedisExample.VaccinationCard.Application.Tests\RedisExample.VaccinationCard.Application.Tests.csproj", "{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisExample.VaccinationCard.Application.Tests", "src\VaccinationCard\RedisExample.VaccinationCard.Application.Tests\RedisExample.VaccinationCard.Application.Tests.csproj", "{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{60374AE3-5476-4A63-B9DB-2E00032906CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisExample.Registration.CrossCutting.Tests", "src\Registration\RedisExample.Registration.CrossCutting.Tests\RedisExample.Registration.CrossCutting.Tests.csproj", "{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +163,10 @@ Global
 		{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -199,6 +207,8 @@ Global
 		{EC74B9B8-021B-48A9-A02F-2473CD1C6015} = {235DB4C7-A9CF-4D90-A4EA-C0315E060DBC}
 		{FE36B304-4207-4EA8-AB13-B14B46ED13E9} = {2433A574-4A0C-4C12-BC65-F2B9021C12B3}
 		{3F97EEBD-6D44-409E-9C55-DAB2263DE1DF} = {FE36B304-4207-4EA8-AB13-B14B46ED13E9}
+		{60374AE3-5476-4A63-B9DB-2E00032906CF} = {2A7EE37D-26D0-4E8F-B90A-D10C8FB87252}
+		{5DBE63B8-2ABE-45A9-9DE0-712FB39D854D} = {60374AE3-5476-4A63-B9DB-2E00032906CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAAAA92A-2DE5-4F80-AD2D-AD50D6E1994E}

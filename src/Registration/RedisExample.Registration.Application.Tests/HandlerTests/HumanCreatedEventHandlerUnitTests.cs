@@ -24,7 +24,7 @@ namespace RedisExample.Registration.Application.Tests.HandlerTests
         [Fact]
         public async Task Handle_ShouldThrowArgumentNullException_EventIsNull()
         {
-            _eventPublisher.Setup(publisher => publisher.Publish(It.IsAny<HumanCreatedEvent>()));
+            _eventPublisher.Setup(publisher => publisher.PublishAsync(It.IsAny<HumanCreatedEvent>()));
 
             HumanCreatedEvent? @event = null;
 
@@ -33,19 +33,19 @@ namespace RedisExample.Registration.Application.Tests.HandlerTests
             response.Should().NotBeNull();
             response.Should().BeOfType(typeof(ArgumentNullException));
             response.Message.Should().Be("Value cannot be null. (Parameter '@event')");
-            _eventPublisher.Verify(publisher => publisher.Publish(It.IsAny<HumanCreatedEvent>()), Times.Never);
+            _eventPublisher.Verify(publisher => publisher.PublishAsync(It.IsAny<HumanCreatedEvent>()), Times.Never);
         }
 
         [Fact]
         public async Task Handle_Success_ShouldPublishEvent()
         {
-            _eventPublisher.Setup(publisher => publisher.Publish(It.IsAny<HumanCreatedEvent>()));
+            _eventPublisher.Setup(publisher => publisher.PublishAsync(It.IsAny<HumanCreatedEvent>()));
 
             var @event = new HumanCreatedEvent(HumanFake());
 
             await Handler.Handle(@event);
 
-            _eventPublisher.Verify(publisher => publisher.Publish(@event), Times.Once);
+            _eventPublisher.Verify(publisher => publisher.PublishAsync(@event), Times.Once);
         }
     }
 }

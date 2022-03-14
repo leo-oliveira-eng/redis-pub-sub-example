@@ -18,7 +18,7 @@ namespace RedisExample.Registration.CrossCutting.Redis
             Settings = settings ?? throw new ArgumentNullException(nameof(settings));
         }
 
-        public async Task Publish(Event? @event)
+        public async Task PublishAsync(Event? @event)
         {
             ArgumentNullException.ThrowIfNull(@event);
 
