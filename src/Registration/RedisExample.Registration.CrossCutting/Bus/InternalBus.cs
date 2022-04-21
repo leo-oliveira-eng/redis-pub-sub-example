@@ -14,7 +14,7 @@ namespace RedisExample.Registration.CrossCutting.Bus
             Mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public async Task<object> SendCommand<T>(T command) where T : Command
+        public async Task<object?> SendCommand<T>(T command) where T : Command
             => await Mediator.Send(command);
 
         public async Task PublishEvent<T>(T @event) where T : Event
