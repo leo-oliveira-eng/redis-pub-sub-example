@@ -1,16 +1,16 @@
-﻿using RedisExample.VaccinationCard.Domain.Core.Events;
+﻿using Newtonsoft.Json;
+using RedisExample.VaccinationCard.Domain.Enums;
 using RedisExample.VaccinationCard.Domain.Models;
 
 namespace RedisExample.VaccinationCard.Domain.Events
 {
-    public class HumanCreatedEvent : DomainEvent
+    public class HumanCreatedEvent : HumanEvent
     {
-        public Human Human { get; set; }
+        [JsonConstructor]
+        public HumanCreatedEvent(Guid id, string cpf, string name, string email, DateTime birthDate, GenderType gender, Address address, string phoneNumber)
+            : base(id, cpf, name, email, birthDate, gender, address, phoneNumber) { }
 
         public HumanCreatedEvent(Human human)
-            : base(human.Id)
-        {
-            Human = human;
-        }
+            : base(human.Id, human.CPF, human.Name, human.Email, human.BirthDate, human.Gender, human.Address, human.PhoneNumber) { }
     }
 }
