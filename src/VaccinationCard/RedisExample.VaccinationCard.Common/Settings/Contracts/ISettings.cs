@@ -3,5 +3,7 @@
     public interface ISettings
     {
         MongoDbSettings MongoDbSettings { get; set; }
+
+        RedisSettings RedisSettings { get; set; }
     }
 }
